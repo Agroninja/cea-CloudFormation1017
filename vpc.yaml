@@ -81,7 +81,7 @@ Resources:
         - Key: 'Name'
           Value: 'DataPrivateSubnet2B'
 
-  #Internet Gateway
+#Internet Gateway
   InternetGateway:
     Type: AWS::EC2::InternetGateway
     Properties:
@@ -94,7 +94,7 @@ Resources:
     Type: AWS::EC2::VPCGatewayAttachment
     Properties:
       VpcId: !Ref MyVPC
-      InternetGatewayId: !InternetGateway
+      InternetGatewayId: !Ref InternetGateway
 
 #Public Route Tables
   PublicRouteTable:
@@ -121,7 +121,7 @@ Resources:
       SubnetId: !Ref PublicSubnet1A
       RouteTableId: !Ref PublicRouteTable
 
-      # Public Subnet 2B Route Table Association
+# Public Subnet 2B Route Table Association
   PublicSubnet2BRouteTableAssociation:
     Type: AWS::EC2::SubnetRouteTableAssociation
     Properties:
